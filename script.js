@@ -1,9 +1,9 @@
 let dataDeHoje =  new Date()
 
 let horarioAtual  = dataDeHoje.toString().split(' ')[4]
-let horaAtual     = Number(horarioAtual.slice(0,2))
-let minutosAtual  = Number(horarioAtual.slice(3,5))
-let segundosAtual = Number(horarioAtual.slice(6,8))
+let horaAtual     = horarioAtual.slice(0,2)
+let minutosAtual  = horarioAtual.slice(3,5)
+let segundosAtual = horarioAtual.slice(6,8)
 
 
 let diaDaSemana = dataDeHoje.toString().split(' ')[0]
@@ -44,12 +44,43 @@ function incrementarSegundos(){
 
 function incrementarMinutos(){
     if(segundosAtual == 0){
-        minutosAtual++
-        minutos.innerText = minutosAtual              
+        minutosAtual = Number(minutosAtual)
+        if(minutosAtual===59){
+            minutosAtual = "00"
+            minutos.innerText = minutosAtual
+        }else{
+            if(minutosAtual<9){
+                minutosAtual++
+                minutos.innerText = `0${minutosAtual}`
+            }else{
+                minutosAtual++
+                minutos.innerText = minutosAtual
+            }
+        }
+                      
     }
     
 }
 
+function incrementarHoras(){
+    if(minutosAtual == 0 && segundosAtual == 0){
+        horaAtual = Number(horaAtual)
+        if(horaAtual === 23){
+            horaAtual = '00'
+            horas.innerText = horaAtual
+        }else{
+            if(horaAtual<9){
+                horaAtual++
+                horas.innerText = `0${horaAtual}`
+            }else{
+                horaAtual++
+                horas.innerText = horaAtual
+            }
+        }
+    }
+}
+
 setInterval(incrementarSegundos,1000)
 setInterval(incrementarMinutos,1000)
+setInterval(incrementarHoras,1000)
 
