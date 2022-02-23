@@ -15,13 +15,15 @@
     </div>
     
     <div class="principal" id="painel">
-        <div id="relogio">
-           <span id="hora"></span>:<span id="minutos"></span>:<span id="segundos"></span>
+        <div id="cronometro">
+           <span id="crono-minutos">00</span>:<span id="crono-segundos">00</span>.<span id="crono-centesimos">00</span>
         </div>
-        <div class="data">
-            <span id="diaDaSemana"></span>, <span id="diaDoMes"></span> de <span id="mes"></span> de <span id="ano"></span>
+        <div class="crono-botoes">
+            <button class="crono-botao" id="crono-botao-iniciar">Iniciar</button>
+            <button class="crono-botao" id="crono-botao-redefinir">Redefinir</button>
+            
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./script_cronometro.js"></script>
 </body>
 </html>
