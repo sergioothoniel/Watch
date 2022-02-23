@@ -12,6 +12,7 @@ let diaDoMes    = Number(dataDeHoje.toString().split(' ')[2])
 let ano         = Number(dataDeHoje.toString().split(' ')[3])
 
 
+
 const horas    = document.querySelector('#hora')
 const minutos  = document.querySelector('#minutos')
 const segundos = document.querySelector('#segundos')
@@ -84,3 +85,39 @@ setInterval(incrementarSegundos,1000)
 setInterval(incrementarMinutos,1000)
 setInterval(incrementarHoras,1000)
 
+const diasDaSemanaEN_PTBR = {
+    Sun: 'Domingo',
+    Mon: 'Segunda',
+    Tue: 'Terça',
+    Wed: 'Quarta',
+    Thu: 'Quinta',
+    Fri: 'Sexta',
+    Sat: 'Sábado'
+}
+
+const mesEN_PTBR = {
+    Jan: 'janeiro',
+    Feb: 'fevereiro',
+    Mar: 'março',
+    Apr: 'abril',
+    May: 'maio',
+    Jun: 'junho',
+    Jul: 'julho',
+    Aug: 'agosto',
+    Sep: 'setembro',
+    Oct: 'outubro',
+    Nov: 'novembro',
+    Dez: 'dezembro'
+
+}
+
+
+const spanDiaDaSemana = document.querySelector('#diaDaSemana')
+const spanDiaDoMes    = document.querySelector('#diaDoMes')
+const spanMes         = document.querySelector('#mes')
+const spanAno         = document.querySelector('#ano')
+
+spanDiaDaSemana.innerText = diasDaSemanaEN_PTBR[diaDaSemana]
+spanDiaDoMes.innerText    = diaDoMes
+spanMes.innerText         = mesEN_PTBR[mes]
+spanAno.innerText         = ano 
