@@ -15,16 +15,27 @@
             
     </div>
     
+    
     <div class="principal" id="painel">
-        <div id="cronometro">
-           <span id="crono-minutos">00</span>:<span id="crono-segundos">00</span>.<span id="crono-centesimos">00</span>
+        <div id="relogio">
+           <span id="hora"></span>:<span id="minutos"></span>:<span id="segundos"></span>
         </div>
-        <div class="crono-botoes">
-            <button class="crono-botao" id="crono-botao-iniciar">Iniciar</button>
-            <button class="crono-botao" id="crono-botao-redefinir">Redefinir</button>
+
+        <div class="horario-depertar">
+            <form action="">
+                <input class="despertador" type="number" name="horas" id="horas-despertar" placeholder="Horas" max="23" min="00"><span class="divisor">:</span>
+                <input class="despertador" type="number" name="minutos" id="minutos-despertar" placeholder="Minutos" max="59" min="00">
+                <button type="submit">Salvar</button>                
+            </form>
+            
+            <div id="despertadores"></div>
             
         </div>
+               
     </div>
-    <script src="./script_cronometro.js"></script>
+    
+       
+
+    <script src="./script-despertador.js"></script>
 </body>
 </html>

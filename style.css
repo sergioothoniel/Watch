@@ -2,6 +2,7 @@ body{
     display: flex;
 }
 
+
 .menu{
     background-color: #ADD8E6;
     height: 100vw;
@@ -20,7 +21,8 @@ body{
 
 .principal{
     width: 100%;
-    height: 300px;
+    height: 100%;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,4 +46,39 @@ a{
 
 .crono-botoes{
     margin-top: -30px;
+}
+
+#crono-botao-iniciar{
+    background-color: green;
+}
+
+#crono-botao-redefinir{
+    background-color: yellow;
+}
+
+.despertador{
+    width: 37px;
+}
+
+.divisor{
+    font-size: 23px;
+    margin-left: 8px;
+}
+
+.horario-depertar{
+    margin-top: -25px;
+    
+}
+
+.despertadores{
+    height: 200px;
+    display: flex;
+}
+
+.horarios-salvos{
+    font-size: 25px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: azure;
+    margin-bottom: 5px;
 }

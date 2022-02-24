@@ -85,41 +85,39 @@ setInterval(incrementarSegundos,1000)
 setInterval(incrementarMinutos,1000)
 setInterval(incrementarHoras,1000)
 
-const diasDaSemanaEN_PTBR = {
-    Sun: 'Domingo',
-    Mon: 'Segunda',
-    Tue: 'Terça',
-    Wed: 'Quarta',
-    Thu: 'Quinta',
-    Fri: 'Sexta',
-    Sat: 'Sábado'
+let horariosParaDepertar = []
+
+const despertadores = document.querySelector('#despertadores')
+const form   = document.querySelector('form')
+
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    
+    let horas = event.target[0].value
+    let minutos = event.target[1].value
+    let horario = horas+':'+minutos
+    horariosParaDepertar.push(horario)
+    
+    let divHorario = document.createElement('div')
+    divHorario.innerText = horario
+    divHorario.className = 'horarios-salvos'
+    despertadores.appendChild(divHorario)
+
+    
+    
+})
+
+setInterval(verificarDespertador, 500)
+
+function verificarDespertador(){
+    let horaAtual = horas.innerText
+    let minutosAtual = minutos.innerText
+    
+    for(let i = 0; i<horariosParaDepertar.length; i++){
+        if(Number(horaAtual) == Number(horariosParaDepertar[i].slice(0,2)) && Number(minutosAtual) == Number(horariosParaDepertar[i].slice(3,5))){
+            console.log('agora')
+        }
+    }
+
 }
-
-const mesEN_PTBR = {
-    Jan: 'janeiro',
-    Feb: 'fevereiro',
-    Mar: 'março',
-    Apr: 'abril',
-    May: 'maio',
-    Jun: 'junho',
-    Jul: 'julho',
-    Aug: 'agosto',
-    Sep: 'setembro',
-    Oct: 'outubro',
-    Nov: 'novembro',
-    Dez: 'dezembro'
-
-}
-
-
-const spanDiaDaSemana = document.querySelector('#diaDaSemana')
-const spanDiaDoMes    = document.querySelector('#diaDoMes')
-const spanMes         = document.querySelector('#mes')
-const spanAno         = document.querySelector('#ano')
-
-spanDiaDaSemana.innerText = diasDaSemanaEN_PTBR[diaDaSemana]
-spanDiaDoMes.innerText    = diaDoMes
-spanMes.innerText         = mesEN_PTBR[mes]
-spanAno.innerText         = ano 
-
 
